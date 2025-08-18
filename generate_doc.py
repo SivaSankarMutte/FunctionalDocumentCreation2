@@ -119,12 +119,11 @@ def generate_file_by_file_doc(llm, project_root: str) -> str:
 # -----------------------------
 # Main Function
 # -----------------------------
-def generate_functional_doc(zip_path: str, output_dir: str = "output") -> str:
-    if os.path.exists(output_dir):
-        shutil.rmtree(output_dir)
-    os.makedirs(output_dir, exist_ok=True)
-
-    workdir = tempfile.mkdtemp()
+def generate_functional_doc(zip_path: str, output_dir: str = "output", workdir: str = None) -> str:
+    if workdir is None:
+        workdir = tempfile.mkdtemp()
+    else:
+        os.makedirs(workdir, exist_ok=True)
     unzip_project(zip_path, os.path.join(workdir, "repo"))
 
     # Setup LLM + embeddings
