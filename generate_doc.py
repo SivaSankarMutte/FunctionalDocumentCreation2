@@ -5,8 +5,9 @@ import zipfile
 from typing import List
 
 from docx import Document
-from langchain_chroma import Chroma
+#from langchain_chroma import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma, FAISS
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
