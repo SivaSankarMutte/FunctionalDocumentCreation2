@@ -25,7 +25,7 @@ def unzip_project(zip_path: str, extract_to: str) -> str:
 
 def collect_code_files(root_dir: str) -> List[str]:
     code_exts = [
-        ".py", ".js", ".jsx", ".ts", ".tsx", ".java", ".cs", ".cpp", ".c", ".go",
+        ".py", ".js", ".jsx", ".ts", ".tsx", ".java", ".jsp", ".cs", ".cpp", ".c", ".go",
         ".rb", ".php", ".swift", ".kt", ".scala", ".rs", ".dart"
     ]
     files = []
